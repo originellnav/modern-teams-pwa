@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Logo, Navigation, GraphQLErrorList, Hamburger } from 'components';
+import { Image, Link, Navigation, GraphQLErrorList, Hamburger } from 'components';
 import { useStaticQuery, graphql } from 'gatsby';
 import * as styles from './styles.module.scss';
 
@@ -43,7 +43,7 @@ const Header = () => {
     }
   `;
   const {
-    nav: { headerNav },
+    nav: { logo, headerNav },
     errors,
   } = useStaticQuery(headerQuery);
 
@@ -54,7 +54,9 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={`container ${styles.container}`}>
-        <Logo />
+        <Link to="/">
+          <Image image={logo.asset} />
+        </Link>
         <Navigation navigationData={headerNav} navbarOpen={navbarOpen} />
         <Hamburger onClick={toggleNav} active={navbarOpen} />
       </div>

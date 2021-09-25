@@ -3,12 +3,19 @@ import { graphql } from 'gatsby';
 export const Queries = graphql`
   fragment GlobalHeaderLinks on Query {
     nav: sanityRouting {
+      logo {
+        asset {
+          gatsbyImageData(layout: CONSTRAINED, height: 40, placeholder: NONE)
+        }
+      }
       headerNav {
         ... on SanityDropdownNavItem {
           _key
           _type
           title
           isLink
+          isExternal
+          url
           linkTo {
             ... on SanityPage {
               id
@@ -20,6 +27,8 @@ export const Queries = graphql`
           dropdownChildren {
             _key
             title
+            isExternal
+            url
             page {
               ... on SanityPage {
                 id
@@ -34,9 +43,10 @@ export const Queries = graphql`
           _key
           _type
           title
-          isNewTab
           isBtn
           btnType
+          isExternal
+          url
           linkTo {
             ... on SanityPage {
               id

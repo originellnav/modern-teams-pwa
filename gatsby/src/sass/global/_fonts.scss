@@ -1,8 +1,16 @@
 /*=============================================>>>>>
 = Font Helper =
 ===============================================>>>>>*/
-// @font-face {
-//   font-family: 'MyWebFont';
-//   src:  url('myfont.woff2') format('woff2'),
-//         url('myfont.woff') format('woff');
-// }
+@font-face {
+  font-family: Sofia;
+  src: url('../../fonts/SofiaPro-Regular.woff2') format('woff2'), 
+    url('../../fonts/SofiaPro-Regular.woff') format('woff');
+  display: swap;
+}
+
+@font-face {
+  font-family: Mabry;
+  src: url('../../fonts/MabryPro-Regular.woff2') format('woff2'), 
+    url('../../fonts/MabryPro-Regular.woff') format('woff');
+  display: swap;
+}

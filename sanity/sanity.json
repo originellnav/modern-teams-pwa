@@ -4,7 +4,7 @@
     "name": "gatsby-pwa-sanity-starter"
   },
   "api": {
-    "projectId": "xxxxxxx",
+    "projectId": "0eukfy6n",
     "dataset": "production"
   },
   "plugins": [
@@ -14,7 +14,8 @@
     "@sanity/default-login",
     "@sanity/desk-tool",
     "media",
-    "@sanity/color-input"
+    "@sanity/color-input",
+    "emoji-picker"
   ],
   "env": {
     "development": {

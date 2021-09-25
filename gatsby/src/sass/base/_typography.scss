@@ -3,7 +3,6 @@
 ===============================================>>>>>*/
 
 // Font weight variables
-// NOTE: Use 400 and 700 weights only
 $font-weight-thin: 100;
 $font-weight-extra-light: 200;
 $font-weight-light: 300;
@@ -14,14 +13,13 @@ $font-weight-bold: 700;
 $font-weight-extra-bold: 800;
 $font-weight-black: 900;
 
-
 @mixin heading-font() {
-  font-family: 'Lato', sans-serif;
+  font-family: "Sofia", sans-serif;
   font-weight: $font-weight-bold;
 }
 
 @mixin body-font() {
-  font-family: 'Lato', Sans-Serif;
+  font-family: "Mabry", sans-serif;
   font-size: 16px;
   font-weight: $font-weight-regular;
   line-height: 1.6em;

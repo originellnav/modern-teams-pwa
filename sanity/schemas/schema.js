@@ -7,6 +7,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // Documents
 import page from "./documents/page";
 import routing from "./documents/routing";
+import company from "./documents/company";
 
 // Objects
 import blockContent from "./objects/blockContent";
@@ -17,6 +18,7 @@ import footerNavItem from "./objects/footerNavItem";
 import footerNav from "./objects/footerNav";
 import socialMediaItem from "./objects/socialMediaItem";
 import mainImage from "./objects/mainImage";
+import benefit from "./objects/benefit";
 
 // Sections
 import introSection from "./sections/introSection";
@@ -41,5 +43,7 @@ export default createSchema({
     socialMediaItem,
     mainImage,
     portableText,
+    company,
+    benefit,
   ]),
 });

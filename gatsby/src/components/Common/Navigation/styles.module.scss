@@ -3,7 +3,7 @@
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 30px;
     @include media-down(large-tablet) {
       display: flex;
       flex-direction: column;
@@ -24,7 +24,7 @@
       overflow: hidden;
       z-index: 10;
       text-align: left;
-      transition: height 1s ease;
+      transition: height 0.7s ease;
       li {
         width: 100%;
         border-bottom: 1px solid #e0e0e0;

@@ -3,9 +3,15 @@ import { BsListUl, BsLink45Deg } from "react-icons/bs";
 export default {
   name: "routing",
   type: "document",
-  title: "Navigation",
-  // __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
+  title: "Routing",
+  __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
   fields: [
+    {
+      name: "logo",
+      title: "Logo",
+      type: "image",
+      description: "This is the logo that will be displayed in the header and footer, and will link to the homepage.",
+    },
     {
       name: "headerNav",
       title: "Header Navigation Items",

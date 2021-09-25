@@ -1,10 +1,7 @@
 import S from "@sanity/desk-tool/structure-builder";
 import React from "react";
 import EyeIcon from "part:@sanity/base/eye-icon";
-import {
-  FcTreeStructure,
-  FcLink,
-} from "react-icons/fc";
+import { FcTreeStructure, FcLink, FcBusiness } from "react-icons/fc";
 
 // Web preview
 const url = "webpreviewurl";
@@ -54,11 +51,7 @@ export const getDefaultDocumentNode = ({ schemaType }) => {
 
 // Prevent from displaying twice
 const hiddenDocTypes = (listItem) =>
-  ![
-    "page",
-    "routing",
-    "media.tag",
-  ].includes(listItem.getId());
+  !["page", "routing", "company", "media.tag"].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -73,10 +66,12 @@ export default () =>
         .title("Routing")
         .icon(FcLink)
         .child(
-          S.editor()
-            .id("routing")
-            .schemaType("routing")
-            .documentId("routing")
+          S.editor().id("routing").schemaType("routing").documentId("routing")
         ),
+      S.listItem()
+        .title("Companies")
+        .icon(FcBusiness)
+        .schemaType("company")
+        .child(S.documentTypeList("company").title("Companies")),
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
