@@ -7,12 +7,6 @@ export default {
   __experimental_actions: [/*'create',*/ "update", /*'delete',*/ "publish"],
   fields: [
     {
-      name: "logo",
-      title: "Logo",
-      type: "image",
-      description: "This is the logo that will be displayed in the header and footer, and will link to the homepage.",
-    },
-    {
       name: "headerNav",
       title: "Header Navigation Items",
       type: "array",
@@ -38,6 +32,12 @@ export default {
       title: "Footer Social Media Items",
       type: "array",
       of: [{ type: "socialMediaItem" }],
+    },
+    {
+      name: "logo",
+      title: "Logo",
+      type: "image",
+      description: "This is the logo that will be displayed in the header and footer, and will link to the homepage.",
     },
   ],
   preview: {
