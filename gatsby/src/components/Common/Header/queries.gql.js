@@ -5,6 +5,7 @@ export const Queries = graphql`
     nav: sanityRouting {
       logo {
         asset {
+          url
           gatsbyImageData(layout: CONSTRAINED, height: 40, placeholder: NONE)
         }
       }

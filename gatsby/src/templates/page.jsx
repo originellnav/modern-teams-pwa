@@ -18,7 +18,7 @@ const Page = ({ location, data: staticData, errors }) => {
   return (
     <Layout location={location} seo={seo}>
       {pageSections.map((section) => (
-        <SanitySection data={section} key={section._key} />
+        <SanitySection data={section} key={section._key} location={location} />
       ))}
     </Layout>
   );
@@ -38,6 +38,8 @@ export const query = graphql`
       sections {
         ...IntroSectionData
         ...PortableTextData
+        ...TypedTextData
+        ...DirectoryGridData
       }
     }
   }

@@ -9,6 +9,17 @@ export default {
       type: "string",
     },
     {
+      name: "benefits",
+      title: "Benefits",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "benefit" }],
+        },
+      ],
+    },
+    {
       name: "seoDescription",
       title: "SEO Description",
       type: "text",
@@ -47,7 +58,21 @@ export default {
       name: "excerpt",
       title: "Excerpt",
       type: "string",
-      description: "The excerpt is displayed on each company's card in the directory."
+      description:
+        "The excerpt is displayed on each company's card in the directory.",
+    },
+    {
+      name: "companyLinks",
+      title: "Company Links",
+      type: "array",
+      of: [
+        {
+          type: "companyWebsite",
+        },
+        {
+          type: "socialMedia",
+        },
+      ],
     },
     {
       name: "description",
@@ -55,20 +80,24 @@ export default {
       type: "blockContent",
     },
     {
+      name: "valuesHeading",
+      title: "Values Section Heading",
+      type: "string",
+    },
+    {
       name: "values",
       title: "Values",
       type: "blockContent",
     },
     {
+      name: "perksHeading",
+      title: "Perks Section Heading",
+      type: "string",
+    },
+    {
       name: "perks",
       title: "Perks & Benefits",
       type: "blockContent",
-    },
-    {
-      name: "benefits",
-      title: "Benefits",
-      type: "array",
-      of: [{ type: "benefit" }],
     },
   ],
   preview: {

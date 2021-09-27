@@ -1,13 +1,13 @@
-import { BsDot } from "react-icons/bs";
+import { FcApproval } from "react-icons/fc";
 export default {
   name: "benefit",
-  title: "Benefit",
-  type: "object",
-  icon: BsDot,
+  title: "Company Benefit",
+  type: "document",
+  icon: FcApproval,
   fields: [
     {
-      name: "benefitText",
-      title: "Benefit Text",
+      name: "title",
+      title: "Title",
       type: "string",
     },
     {
@@ -30,10 +30,40 @@ export default {
         ],
       },
     },
+    {
+      name: "seoDescription",
+      title: "SEO Description",
+      type: "text",
+      description: "Passed to page's JSONLD markup.",
+    },
+    {
+      name: "seoKeywords",
+      title: "SEO Keywords",
+      type: "array",
+      of: [
+        {
+          type: "string",
+        },
+      ],
+      options: {
+        layout: "tags",
+      },
+      description: "Passed to page's JSONLD markup.",
+    },
+    {
+      name: "slug",
+      title: "Slug",
+      type: "slug",
+      options: {
+        source: "title",
+      },
+      description: "Slug MUST be set to render page on front-end.",
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {
-      title: "benefitText",
+      title: "title",
       subtitle: "benefitEmoji",
     },
   },

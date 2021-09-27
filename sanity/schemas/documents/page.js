@@ -47,6 +47,8 @@ export default {
       of: [
         { type: "introSection", icon: BsPuzzleFill },
         { type: "portableText", icon: BsPuzzleFill },
+        { type: "typedText", icon: BsPuzzleFill },
+        { type: "directoryGrid", icon: BsPuzzleFill },
       ],
     },
   ],

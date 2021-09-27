@@ -1,0 +1,114 @@
+.root {
+  background-color: #f5f5f5;
+
+  h2 {
+    max-width: 1025px;
+    margin: 0 auto;
+    padding: 0 20px;
+    @include media-down(small-mobile) {
+      padding: 0 15px;
+    }
+  }
+
+  /* LOGO */
+  .imageSection {
+    margin: 0;
+    .image {
+      max-width: 1025px;
+      width: 100%;
+      padding: 50px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      @include media-down(small-mobile) {
+        padding: 50px 15px;
+      }
+      .logo {
+        width: 150px;
+      }
+    }
+  }
+
+  /* DESCRIPTION */
+  .descriptionSection {
+    background-color: $white;
+    margin-top: 0;
+    .description {
+      max-width: 1025px;
+      width: 100%;
+      padding: 50px 20px;
+      display: grid;
+      grid-template-columns: 55% 40%;
+      align-items: start;
+      gap: 5%;
+      @include media-down(tablet) {
+        grid-template-columns: 1fr;
+      }
+      @include media-down(small-mobile) {
+        padding: 50px 15px;
+      }
+
+      /* BENEFITS */
+      .benefits {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        font-size: 14px;
+        line-height: 1.2em;
+        max-width: 400px;
+        .emoji {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+
+  /* CONTENT SECTION */
+  .contentSection {
+    max-width: 1025px;
+    width: 100%;
+    margin: 10px auto 50px;
+    padding: 0 20px;
+    @include media-down(small-mobile) {
+      padding: 0;
+    }
+    .content {
+      background-color: $white;
+      padding: 30px;
+      border-radius: 5px;
+      @include media-down(tablet) {
+        padding: 15px;
+      }
+      @include media-down(mobile) {
+        border-radius: unset;
+      }
+    }
+  }
+
+  /* COMPANY LINKS */
+  .companyLinksSection {
+    max-width: 1025px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+      @include media-down(small-mobile) {
+        padding: 0 15px 50px;
+      }
+    .companyLinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 20px;
+      justify-content: center;
+      align-items: center;
+      .item {
+        display: flex;
+        align-items: center;
+        .icon {
+          width: 15px;
+          height: 15px;
+          margin-right: 5px;
+        }
+      }
+    }
+  }
+}

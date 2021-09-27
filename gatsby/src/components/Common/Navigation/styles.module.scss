@@ -1,6 +1,5 @@
 .navigation {
   ul {
-    list-style: none;
     display: flex;
     align-items: center;
     gap: 30px;
@@ -14,7 +13,7 @@
       top: 0;
       background-color: $white;
       color: $black;
-      margin-top: 90px;
+      margin-top: 75px;
       padding: 0 20px;
       right: 0;
       bottom: 0;

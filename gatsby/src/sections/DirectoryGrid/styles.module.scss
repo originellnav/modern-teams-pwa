@@ -1,0 +1,12 @@
+.container {
+  text-align: center;
+  .benefitsList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    .benefit {
+      list-style: none;
+    }
+  }
+}

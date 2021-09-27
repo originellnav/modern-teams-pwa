@@ -8,6 +8,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 import page from "./documents/page";
 import routing from "./documents/routing";
 import company from "./documents/company";
+import benefit from "./documents/benefit";
 
 // Objects
 import blockContent from "./objects/blockContent";
@@ -18,11 +19,14 @@ import footerNavItem from "./objects/footerNavItem";
 import footerNav from "./objects/footerNav";
 import socialMediaItem from "./objects/socialMediaItem";
 import mainImage from "./objects/mainImage";
-import benefit from "./objects/benefit";
+import socialMedia from "./objects/socialMedia";
+import companyWebsite from "./objects/companyWebsite";
 
 // Sections
 import introSection from "./sections/introSection";
 import portableText from "./sections/portableText";
+import typedText from "./sections/typedText";
+import directoryGrid from "./sections/directoryGrid";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -44,6 +48,10 @@ export default createSchema({
     mainImage,
     portableText,
     company,
+    socialMedia,
+    companyWebsite,
     benefit,
+    typedText,
+    directoryGrid,
   ]),
 });

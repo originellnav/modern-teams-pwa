@@ -5,12 +5,12 @@ import '../../../sass/global/styles.scss';
 import './styles.scss';
 
 const Layout = (props) => {
-  const { children, seo } = props;
+  const { children, seo, className } = props;
   return (
     <>
       <NoJs />
       <Header />
-      <main>
+      <main className={className}>
         {seo && <SEO {...seo} />}
         {children}
       </main>
