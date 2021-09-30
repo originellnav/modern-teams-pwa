@@ -1,11 +1,11 @@
 import React from 'react';
-import { graphql } from 'gatsby';
-import { Layout, GraphQLErrorList, Section, Image, Link, BlockContent } from 'components';
+import { graphql, useStaticQuery } from 'gatsby';
+import { Layout, GraphQLErrorList, Section, DirectoryGridComp } from 'components';
 import * as styles from './styles.module.scss';
 
 const Benefit = ({ location, data: staticData, errors }) => {
   const { sanityBenefit } = staticData;
-  const { title, seoDescription, seoKeywords, slug, companies } = sanityBenefit;
+  const { title, benefitEmoji, seoDescription, seoKeywords, slug, companies } = sanityBenefit;
   const seo = {
     title,
     desc: seoDescription,
@@ -23,17 +23,11 @@ const Benefit = ({ location, data: staticData, errors }) => {
 
   return (
     <Layout location={location} seo={seo} className={styles.root}>
-      <Section>
-        <div>Title: {title}</div>
-        <div>seoDescription: {seoDescription}</div>
-        <div>seoKeywords: {seoKeywords.join(', ')}</div>
-        <div>Slug: {slug.current}</div>
-        <div>
-          {companies.map((node) => (
-            <Link to={`/directory/${node.slug.current}`}>{node.title}</Link>
-          ))}
-        </div>
+      <Section containerClassName={styles.headingContainer}>
+        <h1>{title}</h1>
+        <p className={styles.description}>{seoDescription}</p>
       </Section>
+      <DirectoryGridComp companyData={companies} heading={benefitEmoji} location={location} />
     </Layout>
   );
 };

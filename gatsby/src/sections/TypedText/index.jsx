@@ -29,7 +29,7 @@ const TypedText = ({ data }) => {
   return (
     <Section containerClassName={styles.container}>
       <h1>{heading}</h1>
-      <h2 style={{ whitespace: 'pre' }} ref={el} />
+      <h2 style={{ whitespace: 'pre', height: '72px' }} ref={el} />
       <div id="typed-strings">
         {subheadings.map((node) => (
           <p key={node}>{node}</p>

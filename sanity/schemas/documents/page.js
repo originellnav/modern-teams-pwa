@@ -49,6 +49,7 @@ export default {
         { type: "portableText", icon: BsPuzzleFill },
         { type: "typedText", icon: BsPuzzleFill },
         { type: "directoryGrid", icon: BsPuzzleFill },
+        { type: "featuredTeams", icon: BsPuzzleFill },
       ],
     },
   ],

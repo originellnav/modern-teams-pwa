@@ -1,0 +1,28 @@
+.container {
+  text-align: center;
+  .benefitsList {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    .benefit {
+      list-style: none;
+      .active {
+        color: $secondary;
+      }
+    }
+  }
+}
+.hideBenefitsUpper {
+  margin-bottom: 0 !important;
+}
+.hideBenefitsLower {
+  margin-top: 20px !important;
+  margin-bottom: 40px !important;
+}
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(274px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}

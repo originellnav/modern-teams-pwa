@@ -1,3 +1,9 @@
 .root {
-  
+  .headingContainer {
+    text-align: center;
+    .description {
+      width: 100%;
+      text-align: center;
+    }
+  }
 }

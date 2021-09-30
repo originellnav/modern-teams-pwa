@@ -4,12 +4,14 @@ export const Queries = graphql`
   fragment BenefitData on Query {
     sanityBenefit(id: { eq: $id }) {
       title
+      benefitEmoji
       seoDescription
       seoKeywords
       slug {
         current
       }
       companies {
+        id
         title
         excerpt
         logo {

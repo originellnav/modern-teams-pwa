@@ -6,12 +6,19 @@ export const Queries = graphql`
     _type
     heading
   }
-  fragment GlobalBenefitsData on Query {
-    benefits: allSanityBenefit {
+  fragment GlobalCompaniesData on Query {
+    companies: allSanityCompany {
       edges {
         node {
           id
           title
+          excerpt
+          logo {
+            asset {
+              url
+              gatsbyImageData(layout: CONSTRAINED, width: 100, placeholder: NONE)
+            }
+          }
           slug {
             current
           }
