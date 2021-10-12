@@ -42,6 +42,7 @@ export const query = graphql`
         ...DirectoryGridData
         ...FeaturedTeamsData
         ...BenefitListData
+        ...ContactFormData
       }
     }
   }

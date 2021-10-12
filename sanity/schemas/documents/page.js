@@ -51,6 +51,7 @@ export default {
         { type: "directoryGrid", icon: BsPuzzleFill },
         { type: "featuredTeams", icon: BsPuzzleFill },
         { type: "benefitList", icon: BsPuzzleFill },
+        { type: "contactForm", icon: BsPuzzleFill },
       ],
     },
   ],

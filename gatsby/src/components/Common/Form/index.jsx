@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import { FormField } from 'components';
 import * as styles from './styles.module.scss';
 
-const Form = ({ fields, formId }) => {
+const ContactForm = ({ fields }) => {
   const {
     register,
     handleSubmit,
@@ -14,44 +14,14 @@ const Form = ({ fields, formId }) => {
   const [submitting, setSubmitting] = useState(false);
   const [submissionError, setSubmissionError] = useState(false);
 
-  useEffect(
-    () =>
-      // Set submitting to false in clean up function
-      () => {
-        setSubmitting(false);
-      },
-    []
-  );
-
   const onSubmit = async (values) => {
     setSubmitting(true);
-    try {
-      const url = `https://submit-form.com/${formId}`;
-      const config = {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(values),
-      };
-      const response = await fetch(url, config);
-      // const json = await response.json()
-      if (response.ok) {
-        // return json
-        return navigate('/thank-you');
-      }
-    } catch (error) {
-      console.error('Error submitting form', error);
-      setSubmissionError('Oops something went wrong, please try again');
-      setSubmitting(false);
-    }
+    console.log(values);
   };
 
   return (
     <section>
-      {submissionError && <p>{submissionError}</p>}
-      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+      <form data-netlify="true" onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <button type="submit" disabled aria-hidden="true" style={{ display: 'none' }} />
         <input
           ref={register()}
@@ -77,9 +47,12 @@ const Form = ({ fields, formId }) => {
             </div>
           );
         })}
-        <button type="submit" className={`button black ${styles.formButton}`} disabled={submitting}>
-          {submitting ? 'Submitting' : 'Sign Up'}
-        </button>
+        <div className={styles.submitContainer}>
+          <button type="submit" className={`button black ${styles.formButton}`} disabled={submitting}>
+            {submitting ? 'Submitting' : 'Submit'}
+          </button>
+        </div>
+
         {/* Wrapped in errorMsg container to maintain spacing below submit button while error isn't visible */}
         <span className={styles.errorMsg}>{submissionError && <span>{submissionError}</span>}</span>
       </form>
@@ -87,4 +60,4 @@ const Form = ({ fields, formId }) => {
   );
 };
 
-export default Form;
+export default ContactForm;

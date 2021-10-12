@@ -21,6 +21,7 @@ import socialMediaItem from "./objects/socialMediaItem";
 import mainImage from "./objects/mainImage";
 import socialMedia from "./objects/socialMedia";
 import companyWebsite from "./objects/companyWebsite";
+import formField from "./objects/formField";
 
 // Sections
 import introSection from "./sections/introSection";
@@ -29,6 +30,7 @@ import typedText from "./sections/typedText";
 import directoryGrid from "./sections/directoryGrid";
 import featuredTeams from "./sections/featuredTeams";
 import benefitList from "./sections/benefitList";
+import contactForm from "./sections/contactForm";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -57,5 +59,7 @@ export default createSchema({
     directoryGrid,
     featuredTeams,
     benefitList,
+    contactForm,
+    formField,
   ]),
 });

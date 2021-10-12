@@ -52,6 +52,7 @@ iframe {
   text-decoration: underline;
 }
 p {
+  margin-bottom: 20px;
   &:global(.block-img) {
     text-align: center;
   }
