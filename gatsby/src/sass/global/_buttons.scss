@@ -43,6 +43,9 @@ $buttons: (
         background: darken($buttonColor, 5%);
         @if $name != "white" {
           border-color: darken($buttonColor, 5%);
+        } @else {
+          background: $black;
+          color: $white;
         }
       }
     }
