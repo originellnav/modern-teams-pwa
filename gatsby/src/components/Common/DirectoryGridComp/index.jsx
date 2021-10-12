@@ -49,7 +49,7 @@ const DirectoryGridComp = ({ heading, companyData, hideBenefits }) => {
             logo={node?.logo}
             title={node?.title}
             excerpt={node?.excerpt}
-            slug={`directory/${node?.slug?.current}/`}
+            slug={`/${node?.slug?.current}/`}
           />
         ))}
       </Section>

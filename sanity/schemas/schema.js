@@ -31,6 +31,7 @@ import directoryGrid from "./sections/directoryGrid";
 import featuredTeams from "./sections/featuredTeams";
 import benefitList from "./sections/benefitList";
 import contactForm from "./sections/contactForm";
+import emailListCta from "./sections/emailListCta";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -61,5 +62,6 @@ export default createSchema({
     benefitList,
     contactForm,
     formField,
+    emailListCta,
   ]),
 });

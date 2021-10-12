@@ -43,6 +43,7 @@ export const query = graphql`
         ...FeaturedTeamsData
         ...BenefitListData
         ...ContactFormData
+        ...EmailListCtaData
       }
     }
   }

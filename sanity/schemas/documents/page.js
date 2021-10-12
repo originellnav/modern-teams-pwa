@@ -52,6 +52,7 @@ export default {
         { type: "featuredTeams", icon: BsPuzzleFill },
         { type: "benefitList", icon: BsPuzzleFill },
         { type: "contactForm", icon: BsPuzzleFill },
+        { type: "emailListCta", icon: BsPuzzleFill },
       ],
     },
   ],

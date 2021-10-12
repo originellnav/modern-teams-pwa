@@ -56,7 +56,7 @@ async function createNewPages(graphql, actions) {
   companyEdges.forEach((edge) => {
     const { id, slug = {} } = edge.node;
     // The page with slug 'home' is set to homepage
-    const path = `/directory/${slug.current}/`;
+    const path = `/${slug.current}/`;
 
     createPage({
       path,
