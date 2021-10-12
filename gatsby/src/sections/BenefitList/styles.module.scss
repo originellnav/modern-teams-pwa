@@ -1,0 +1,23 @@
+.benefitList {
+  max-width: 900px !important;
+  width: 100%;
+  h3 {
+    text-align: center;
+  }
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    @include media-down(large-mobile) {
+      flex-direction: column;
+      text-align: center;
+    }
+    li {
+      white-space: nowrap;
+      .emoji {
+        margin-right: 10px;
+      }
+    }
+  }
+}

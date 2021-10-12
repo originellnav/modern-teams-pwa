@@ -28,6 +28,7 @@ import portableText from "./sections/portableText";
 import typedText from "./sections/typedText";
 import directoryGrid from "./sections/directoryGrid";
 import featuredTeams from "./sections/featuredTeams";
+import benefitList from "./sections/benefitList";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -55,5 +56,6 @@ export default createSchema({
     typedText,
     directoryGrid,
     featuredTeams,
+    benefitList,
   ]),
 });

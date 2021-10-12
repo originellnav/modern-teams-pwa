@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-sanity-starter",
-  "description": "Gatsby & Sanity starter that includes a page builder, flexible navigation/routing schema, and PWA compliance.",
+  "name": "modernteamsfrontend",
+  "description": "Gatsby front-end for Modern Teams.",
   "license": "MIT",
   "version": "1.0.0",
   "author": "Tyler Brown",

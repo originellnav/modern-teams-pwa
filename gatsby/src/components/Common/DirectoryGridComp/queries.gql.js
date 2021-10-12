@@ -7,6 +7,7 @@ export const Queries = graphql`
         node {
           id
           title
+          benefitEmoji
           slug {
             current
           }
