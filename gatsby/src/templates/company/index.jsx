@@ -7,6 +7,7 @@ const Company = ({ location, data: staticData, errors }) => {
   const { sanityCompany } = staticData;
   const {
     title,
+    seoTitle,
     seoDescription,
     seoKeywords,
     slug,
@@ -20,7 +21,7 @@ const Company = ({ location, data: staticData, errors }) => {
     benefits,
   } = sanityCompany;
   const seo = {
-    title,
+    title: seoTitle,
     desc: seoDescription,
     keywords: seoKeywords,
     pathname: slug.current,

@@ -20,6 +20,11 @@ export default {
       ],
     },
     {
+      name: "seoTitle",
+      title: "SEO Title",
+      type: "string",
+    },
+    {
       name: "seoDescription",
       title: "SEO Description",
       type: "text",

@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from 'react';
+/* eslint-disable jsx-a11y/heading-has-content */
+import React, { useEffect, useRef, useState } from 'react';
+import Typed from 'typed.js';
 import { navigate } from 'gatsby';
 import { useForm } from 'react-hook-form';
 import addToMailchimp from 'gatsby-plugin-mailchimp';
@@ -6,7 +8,27 @@ import { Section, FormField } from 'components';
 import * as styles from './styles.module.scss';
 
 const EmailListCta = ({ data }) => {
-  const { heading, subheading } = data;
+  const { heading, subheadings, showForm } = data;
+
+  const el = useRef(null);
+  const typed = useRef(null);
+
+  useEffect(() => {
+    const options = {
+      stringsElement: '#typed-strings',
+      typeSpeed: 80,
+      backSpeed: 10,
+      loop: true,
+      showCursor: false,
+    };
+
+    typed.current = new Typed(el.current, options);
+
+    return () => {
+      typed.current.destroy();
+    };
+  }, []);
+
   const fields = [
     {
       name: 'email',
@@ -50,10 +72,22 @@ const EmailListCta = ({ data }) => {
   };
 
   return (
-    <>
-      <Section className={styles.section} containerClassName={styles.container}>
-        <h2>{heading}</h2>
-        <h3>{subheading}</h3>
+    <Section containerClassName={styles.container}>
+      {heading && <h1>{heading}</h1>}
+      {subheadings && (
+        <>
+          <h2 style={{ whitespace: 'pre', height: '72px' }} ref={el} />
+          <div id="typed-strings">
+            {/* Blank line needed for conditional rendering */}
+            <span>&nbsp;</span>
+            {subheadings?.map((node) => (
+              <p key={node}>{node}</p>
+            ))}
+          </div>
+          <span id="typed" />
+        </>
+      )}
+      {showForm && (
         <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
           <button type="submit" disabled aria-hidden="true" style={{ display: 'none' }} />
           {fields.map((field) => {
@@ -73,7 +107,7 @@ const EmailListCta = ({ data }) => {
             );
           })}
           <div className={styles.submitContainer}>
-            <button type="submit" className={`button black ${styles.formButton}`} disabled={submitting}>
+            <button type="submit" className={`button secondary ${styles.formButton}`} disabled={submitting}>
               {submitting ? 'Submitting' : 'Submit'}
             </button>
           </div>
@@ -81,8 +115,8 @@ const EmailListCta = ({ data }) => {
           {/* Wrapped in errorMsg container to maintain spacing below submit button while error isn't visible */}
           <span className={styles.errorMsg}>{submissionError && <span>{submissionError}</span>}</span>
         </form>
-      </Section>
-    </>
+      )}
+    </Section>
   );
 };
 

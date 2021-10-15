@@ -9,9 +9,16 @@ export default {
       type: "string",
     },
     {
-      name: "subheading",
-      title: "Subheading",
-      type: "string",
+      name: "subheadings",
+      title: "Subheadings",
+      type: "array",
+      of: [{ type: "string" }],
+    },
+    {
+      name: "showForm",
+      title: "Email List CTA",
+      type: "boolean",
+      description: "Toggle to render an email list CTA inside this section.",
     },
   ],
   preview: {

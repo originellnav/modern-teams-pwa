@@ -26,7 +26,6 @@ import formField from "./objects/formField";
 // Sections
 import introSection from "./sections/introSection";
 import portableText from "./sections/portableText";
-import typedText from "./sections/typedText";
 import directoryGrid from "./sections/directoryGrid";
 import featuredTeams from "./sections/featuredTeams";
 import benefitList from "./sections/benefitList";
@@ -56,12 +55,11 @@ export default createSchema({
     socialMedia,
     companyWebsite,
     benefit,
-    typedText,
+    emailListCta,
     directoryGrid,
     featuredTeams,
     benefitList,
     contactForm,
     formField,
-    emailListCta,
   ]),
 });

@@ -5,6 +5,7 @@ export const Queries = graphql`
     _key
     _type
     heading
-    subheading
+    subheadings
+    showForm
   }
 `;

@@ -4,6 +4,7 @@ export const Queries = graphql`
   fragment CompanyData on Query {
     sanityCompany(id: { eq: $id }) {
       title
+      seoTitle
       seoDescription
       seoKeywords
       slug {

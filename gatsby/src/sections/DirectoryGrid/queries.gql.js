@@ -12,6 +12,11 @@ export const Queries = graphql`
         node {
           id
           title
+          benefits {
+            id
+            title
+            benefitEmoji
+          }
           excerpt
           logo {
             asset {

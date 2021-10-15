@@ -4,8 +4,8 @@ import { Layout, SanitySection, GraphQLErrorList } from 'components';
 
 const Page = ({ location, data: staticData, errors }) => {
   const { sanityPage } = staticData;
-  const { sections: pageSections, title, seoDescription, seoKeywords, slug } = sanityPage;
-  const seo = { title, desc: seoDescription, keywords: seoKeywords, pathname: slug.current };
+  const { sections: pageSections, title, seoTitle, seoDescription, seoKeywords, slug } = sanityPage;
+  const seo = { title: seoTitle, desc: seoDescription, keywords: seoKeywords, pathname: slug.current };
 
   if (errors) {
     return (
@@ -30,6 +30,7 @@ export const query = graphql`
   query Page($id: String!) {
     sanityPage(id: { eq: $id }) {
       title
+      seoTitle
       seoDescription
       seoKeywords
       slug {
@@ -38,12 +39,11 @@ export const query = graphql`
       sections {
         ...IntroSectionData
         ...PortableTextData
-        ...TypedTextData
+        ...EmailListCtaData
         ...DirectoryGridData
         ...FeaturedTeamsData
         ...BenefitListData
         ...ContactFormData
-        ...EmailListCtaData
       }
     }
   }

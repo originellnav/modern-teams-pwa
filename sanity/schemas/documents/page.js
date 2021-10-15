@@ -10,6 +10,11 @@ export default {
       type: "string",
     },
     {
+      name: "seoTitle",
+      title: "SEO Title",
+      type: "string"
+    },
+    {
       name: "seoDescription",
       title: "SEO Description",
       type: "text",
@@ -47,12 +52,11 @@ export default {
       of: [
         { type: "introSection", icon: BsPuzzleFill },
         { type: "portableText", icon: BsPuzzleFill },
-        { type: "typedText", icon: BsPuzzleFill },
+        { type: "emailListCta", icon: BsPuzzleFill },
         { type: "directoryGrid", icon: BsPuzzleFill },
         { type: "featuredTeams", icon: BsPuzzleFill },
         { type: "benefitList", icon: BsPuzzleFill },
         { type: "contactForm", icon: BsPuzzleFill },
-        { type: "emailListCta", icon: BsPuzzleFill },
       ],
     },
   ],

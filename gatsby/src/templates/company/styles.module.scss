@@ -39,10 +39,12 @@
       padding: 50px 20px;
       display: grid;
       grid-template-columns: 55% 40%;
-      align-items: start;
+      align-items: center;
       gap: 5%;
       @include media-down(tablet) {
         grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 50px;
       }
       @include media-down(small-mobile) {
         padding: 50px 15px;
