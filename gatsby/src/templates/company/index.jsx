@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { Layout, GraphQLErrorList, Section, Image, Link, BlockContent } from 'components';
 import * as styles from './styles.module.scss';
+import { mapEdgesToNodes } from '../../utils/helpers';
 
 const Company = ({ location, data: staticData, errors }) => {
   const { sanityCompany } = staticData;

@@ -54,5 +54,16 @@ export const Queries = graphql`
         benefitEmoji
       }
     }
+
+    jobData: allAirtable(filter: { table: { eq: "Current job openings" }, data: { Name: { eq: "Loom" } } }) {
+      edges {
+        node {
+          data {
+            jobListingName: Name
+            jobListingLocation: Location
+          }
+        }
+      }
+    }
   }
 `;

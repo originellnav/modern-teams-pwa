@@ -15,6 +15,7 @@ const {
   SANITY_DATASET,
   SANITY_PROJECT_ID,
   HOST,
+  AIRTABLE_KEY,
   gatsby_executing_command: GATSBY_CMD,
 } = process.env;
 
@@ -296,6 +297,19 @@ module.exports = {
         sassOptions: {
           includePaths: ['src/sass/base'],
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: AIRTABLE_KEY,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: `apphQgPl6VuXV2KLv`,
+            tableName: `Current job openings`,
+          },
+        ],
       },
     },
     ...trackingPlugins(),
