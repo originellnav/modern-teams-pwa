@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout, GraphQLErrorList, Section, Image, Link, BlockContent } from 'components';
+import { Layout, GraphQLErrorList, Section, Image, Link, BlockContent, JobOpeningCard } from 'components';
 import * as styles from './styles.module.scss';
-import { mapEdgesToNodes } from '../../utils/helpers';
+import { mapEdgesToNodes, pullJobs } from '../../utils/helpers';
 
 const Company = ({ location, data: staticData, errors }) => {
   const { sanityCompany } = staticData;
@@ -27,6 +27,11 @@ const Company = ({ location, data: staticData, errors }) => {
     keywords: seoKeywords,
     pathname: slug.current,
   };
+
+  /* Destructure job listings */
+  const jobsData = mapEdgesToNodes(staticData.jobs);
+  /* Filter job listings against current company title */
+  const jobs = pullJobs(jobsData, title);
 
   if (errors) {
     return (
@@ -58,6 +63,19 @@ const Company = ({ location, data: staticData, errors }) => {
           ))}
         </aside>
       </Section>
+
+      {/* JOB OPENINGS - CONDITIONALLY RENDER */}
+
+      {jobs.length > 0 && (
+        <Section>
+          <h2>Job Openings</h2>
+          <div className={styles.jobListings}>
+            {jobs.map((node) => (
+              <JobOpeningCard title={node.Job_title} type={node.Type} jobLocation={node.Location} link={node.Link} />
+            ))}
+          </div>
+        </Section>
+      )}
 
       {/* COMPANY VALUES */}
       <h2>{valuesHeading}</h2>
@@ -102,5 +120,18 @@ export default Company;
 export const query = graphql`
   query Company($id: String!) {
     ...CompanyData
+    jobs: allAirtable {
+      edges {
+        node {
+          data {
+            Name
+            Job_title
+            Type
+            Link
+            Location
+          }
+        }
+      }
+    }
   }
 `;

@@ -65,6 +65,17 @@
     }
   }
 
+  .jobListings {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    max-width: 985px;
+    margin: 10px auto 0;
+    @include media-down(tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+
   /* CONTENT SECTION */
   .contentSection {
     max-width: 1025px;

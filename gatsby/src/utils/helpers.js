@@ -3,6 +3,11 @@ export function mapEdgesToNodes(data) {
   return data.edges.map((edge) => edge.node);
 }
 
+export function pullJobs(data, title) {
+  const job = data.filter((row) => row.data.Name === title);
+  return job.map((row) => row.data);
+}
+
 export function buildImageObj(source = { asset: {} }) {
   const imageObj = {
     asset: { _ref: source.asset._ref || source.asset._id },

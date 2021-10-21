@@ -56,6 +56,7 @@ const BlockContent = ({ data, className }) => {
     },
     listItem: ({ children }) => <li>{children}</li>,
     marks: {
+      color: ({ children, mark }) => <span style={{ color: mark.hex }}>{children}</span>,
       link: ({ children, mark }) =>
         mark.href ? (
           <Link to={mark?.href} className={styles.link}>

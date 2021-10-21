@@ -1,5 +1,5 @@
 import React from "react";
-import { MdLink, MdFormatAlignLeft, MdFormatAlignCenter, MdFormatAlignRight } from "react-icons/md";
+import { MdLink, MdFormatAlignCenter, MdFormatAlignRight, MdFormatColorText } from "react-icons/md";
 
 const centeredRender = (props) => (
   <div style={{ textAlign: "center" }}>{props.children}</div>
@@ -50,6 +50,12 @@ export default {
         ],
         // Annotations can be any object structure – e.g. a link or a footnote.
         annotations: [
+          {
+            title: "Color",
+            name: "color",
+            type: "color",
+            blockEditor: { icon: MdFormatColorText},
+          },
           {
             title: "External Link",
             name: "link",

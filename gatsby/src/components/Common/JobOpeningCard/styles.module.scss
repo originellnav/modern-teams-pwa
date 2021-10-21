@@ -1,0 +1,20 @@
+.card {
+  width: 100%;
+  border: 1px solid $black;
+  border-radius: 5px;
+  padding: 20px;
+  .title {
+    @include h4();
+  }
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    .item {
+      width: fit-content;
+      img {
+        margin-right: 5px;
+      }
+    }
+  }
+}
