@@ -5,7 +5,7 @@
   "version": "1.0.0",
   "author": "Tyler Brown",
   "scripts": {
-    "build": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build": "cross-env GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "dev": "gatsby develop -o",
     "dev:host": "gatsby develop --host=0.0.0.0",
     "develop": "gatsby develop",
@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@sanity/block-content-to-react": "^3.0.0",
+    "cross-env": "^7.0.3",
     "gatsby": "^3.0.3",
     "gatsby-plugin-brotli": "^2.0.0",
     "gatsby-plugin-canonical-urls": "^3.0.0",
