@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import { Layout, GraphQLErrorList, Section, Image, Link, BlockContent, JobOpeningCard } from 'components';
+import { Layout, GraphQLErrorList, Section, Image, BlockContent, JobOpeningCard, Link } from 'components';
 import * as styles from './styles.module.scss';
 import { mapEdgesToNodes, pullJobs } from '../../utils/helpers';
 
@@ -66,12 +66,17 @@ const Company = ({ location, data: staticData, errors }) => {
 
       {/* JOB OPENINGS - CONDITIONALLY RENDER */}
 
-      {jobs.length > 0 && (
+      {jobs?.length > 0 && (
         <Section>
           <h2>Job Openings</h2>
           <div className={styles.jobListings}>
-            {jobs.map((node) => (
-              <JobOpeningCard title={node.Job_title} type={node.Type} jobLocation={node.Location} link={node.Link} />
+            {jobs?.map((node) => (
+              <JobOpeningCard
+                title={node.Job_title}
+                type={node.Type}
+                jobLocation={node.Location}
+                link={`${node.Link}/`}
+              />
             ))}
           </div>
         </Section>
