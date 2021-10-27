@@ -14,5 +14,17 @@ export const Queries = graphql`
         }
       }
     }
+    pages: allSanityPage {
+      edges {
+        node {
+          id
+          title
+          isDirectory
+          slug {
+            current
+          }
+        }
+      }
+    }
   }
 `;

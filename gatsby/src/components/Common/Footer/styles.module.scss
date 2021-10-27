@@ -4,12 +4,19 @@
 
 .container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   border-top: rgba($white, 0.1) 1px solid;
   @include media-down(mobile) {
     text-align: center;
+  }
+  ul {
+    border-bottom: 1px solid rgba($black, 0.3);
+    li {
+      display: inline;
+      padding: 10px;
+    }
   }
 }
 

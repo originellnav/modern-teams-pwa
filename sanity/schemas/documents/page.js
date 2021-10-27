@@ -35,6 +35,11 @@ export default {
       description: "Passed to page's JSONLD markup.",
     },
     {
+      name: "isDirectory",
+      title: "This page displays the full company list.",
+      type: "boolean",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

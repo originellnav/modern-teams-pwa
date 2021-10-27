@@ -12,19 +12,15 @@ const DirectoryGridComp = ({ heading, companyData, hideBenefits }) => {
     }
   `);
 
+  const pages = mapEdgesToNodes(directoryData.pages);
   const benefits = mapEdgesToNodes(directoryData.benefits);
   /* If companyData came from benefits template it won't have edges/nodes */
   const companies = companyData.edges ? mapEdgesToNodes(companyData) : companyData;
 
-  const all = {
-    id: 'all',
-    slug: {
-      current: 'directory',
-    },
-    title: 'All',
-  };
+  // Bind the page with isDirectory toggled to all
+  const all = pages.filter((node) => node.isDirectory);
   // Inject directory page object to beginning of benefits array
-  benefits.unshift(all);
+  benefits.unshift(all[0]);
 
   return (
     <>
